@@ -1,6 +1,18 @@
 let board = document.getElementsByClassName('board')[0]
+
+let setbox = document.getElementsByClassName('set-box')[0]
+let settings = document.getElementsByClassName('settings')[0]
+// controlling speed
+let speed = document.getElementsByTagName("input")[0].value
+settings.onclick = function(){
+  setbox.classList.toggle('visible')
+}
+let slider =  document.getElementById('slider')
+slider.oninput = function (){
+  speed = document.getElementsByTagName("input")[0].value
+}
 // page refresh time  is set from here ny using speed
-let speed = 6
+
 let lastRenderTime = 0
 let velocity = { x: 0, y: 0 }
 let food = document.createElement('div')
